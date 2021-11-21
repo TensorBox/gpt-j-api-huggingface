@@ -1,10 +1,10 @@
 from transformers import AutoTokenizer, GPTJForCausalLM
 import torch 
 
-def run_inference(params_json):
-    model = GPTJForCausalLM.from_pretrained("EleutherAI/gpt-j-6B", revision='float16', torch_dtype=torch.half, low_cpu_mem_usage=True).cuda()
-    tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+model = GPTJForCausalLM.from_pretrained("EleutherAI/gpt-j-6B", revision='float16', torch_dtype=torch.half, low_cpu_mem_usage=True).cuda()
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
 
+def run_inference(params_json):
     input_ids = tokenizer(params_json['prompt'],
                         return_tensors="pt").input_ids.cuda()
 
