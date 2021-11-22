@@ -7,5 +7,5 @@ axios.post('http://0.0.0.0:5000/generate', json, {
     'Content-Type': 'application/json'
   }
 }).then(res=>{
-    console.log(res.data.data); // '{"answer":42}'
+    console.log(res.data); // '{"answer":42}'
 })
