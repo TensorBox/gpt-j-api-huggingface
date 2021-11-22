@@ -8,7 +8,11 @@ def run_inference(params_json):
     input_ids = tokenizer(params_json['prompt'],
                         return_tensors="pt").input_ids.cuda()
 
-    gen_tokens = model.generate(input_ids, do_sample=True)
+    temperature = params_json["temperature"] if "temperature" in params_json else 1.0
+    top_k = params_json["top_k"] if "top_k" in params_json else 50
+    top_p = params_json["top_p"] if "top_p" in params_json else 1.0
+
+    gen_tokens = model.generate(input_ids, do_sample=True, temperature=temperature, top_p=top_p, top_k=top_k)
     gen_text = tokenizer.batch_decode(gen_tokens)[0]
 
     return gen_text
