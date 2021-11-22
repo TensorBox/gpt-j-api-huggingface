@@ -6,5 +6,5 @@ payload = {
     "max_length" : 100
 }
 headers = {'Content-type': 'application/json'}
-response = requests.post("http://0.0.0.0:5000/generate", params=json.dumps(payload), headers=headers).json()
+response = requests.post("http://0.0.0.0:5000/generate", data=json.dumps(payload), headers=headers).json()
 print(response)
