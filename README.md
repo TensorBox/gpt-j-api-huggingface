@@ -1,16 +1,16 @@
 # gpt-j-api-huggingface 🤗
 
-An API to interact with the GPT-J language model in Huggingface! 
+An API to interact with the GPT-J language model in Huggingface!
 
 ## Launching the server
 
-To launch the server simply run:
+To launch the API server simply run:
 
 ```
 python3 server.py
 ```
 
-# Using the API
+## Using the API
 
 Execute the following commands to run an example in the preferred language:
 
