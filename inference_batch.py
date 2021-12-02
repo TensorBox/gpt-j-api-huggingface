@@ -8,8 +8,7 @@ TOP_P = 1.0
 class InferenceModel:
     def __init__(self):
         self.model = GPTJForCausalLM.from_pretrained("EleutherAI/gpt-j-6B", revision='float16', 
-                                                     torch_dtype=torch.half, low_cpu_mem_usage=True, 
-                                                     cache_dir="/media/server_user/Samsung Data NVM/projects/tb_finetune_worker/huggingface_j_6b_float16/transformers").cuda()
+                                                     torch_dtype=torch.half, low_cpu_mem_usage=True).cuda()
         self.tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
         self.tokenizer.padding_side = "left" 
         self.tokenizer.pad_token = self.tokenizer.eos_token # to avoid an error
