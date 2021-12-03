@@ -10,6 +10,13 @@ To launch the API server simply run:
 python3 server.py
 ```
 
+To launch the API server with dynamic batching run:
+
+```
+python3 server_batch.py
+```
+
+
 ## Using the API
 
 Execute the following commands to run an example in the preferred language:
